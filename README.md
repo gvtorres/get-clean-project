@@ -13,14 +13,16 @@ to execute the following tasks:
 with the average of each variable for each activity and each subject.
 
 ### Folder Contents:
-The R script run_analysis.R performs the data reading and merging  
-from the directories:
 
-* train
-* test
-* Info
+The R script **run_analysis.R** performs all the operations assuming that  
+the data set is in the same directory.
 
-Producing the output file:
+It is also necessary to install the package 'dplyr'
+
+The **CodeBook** lists all the steps present in the script and describes the  
+data set.
+
+The script takes no input argument and outputs the file:
 
 * tidy_data.txt
 

@@ -6,8 +6,10 @@ This file documents the changes made in the Human Recognition Using SmartPhones 
 by the run_anaylis.R script.
 
 ### Description:
-Detailed information abaout the data set can be found in the file  
-**README.txt** in the folder **Info**.
+Detailed information about the data set can be found in the previous link.
+Essentially, the raw data set consists of many smart phone measurements from  
+positioning variables, e.g. angular speed and body accelerations at the X, Y or Z axis  
+in order to determine the activity, e.g. walking and sitting, someone is doing.
 
 The run_analysis.R script used the files:
 * train_X.txt: contains the measurements, where each columns correspond to a different variable
@@ -16,6 +18,25 @@ The run_analysis.R script used the files:
 * test_y.txt: same as train_y.txt but with different measurements
 * features.txt: contains the column names of the train_X.txt and test_X.txt files
 * activity_labels.txt: contains the name corresponding to each activity id.  
+
+The script manipulates the mean and standard deviation of the following variables  
+from the original data set:
+* The body linear acceleration and angular velocity were derived in time to obtain Jerk signals:  
+(TimeDomainBodyAccelerationJerkXYZ and TimeDomainBodyGyroscopeJerkXYZ).
+* Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm
+(TimeDomainBodyAccelerationMagnitude, TimeDoaminGravityAccelerationMagnitude,  
+TimeDomainBodyAccelerationJerkMagnitude, TimeDomainBodyGyroscopeMagnitude,  
+TimeDomainBodyGyroscopeJerkMagnitude).
+* Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing:
+FrequencyDomainBodyAccelerationXYZ, FrequencyDomainBodyAccelerationXYZ,  
+FrequencyDomainBodyGyroXYZ, FrequencyDomainBodyAccelerationJerkMagnitude,
+FrequencyDomainBodyGyroscopeMagnitude, FrequencyDomainBodyGyroscopeJerkMagnitude
+* The signals which have a 'XYZ' pattern at the end of their names  
+were used to denote 3-axial signals in the X, Y and Z directions.
+* Many parameters of these signals were estimated in the raw data, in this project  
+only the Mean and StandarDeviation were used.
+* The analysis merges the ActivityId and the ActivityName, presented in the  
+y.txt and activity_labels.txt files from the raw data set, with the described signals.
 
 
 ### Steps:
